@@ -1,0 +1,16 @@
+{
+    "msgId": "123",
+    "type":"event",
+    "pInfo": {
+            "recordId": 20081421431090398915,
+            "carNo": "粤B66688",
+            "parkType": "2",
+            "parkCode": "1234567890",
+            "parkSpotNo": "001",
+            "spotSn": "440304000000XXX",
+            "accessTime": "1597412626",
+            "imagePath": "",
+            "deviceNo": ""
+    },
+    "time": 1524448722000
+}

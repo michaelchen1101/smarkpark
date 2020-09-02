@@ -1,0 +1,33 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /smartpark
+spring:
+  #profiles:
+    #active: @profileActive@
+  datasource:
+    url: jdbc:mysql://localhost/smartpark?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    # 使用Druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource  # 数据源类型
+    driver-class-name: com.mysql.cj.jdbc.Driver     # 数据源驱动
+    druid:
+      filters: stat  # 配置监控统计拦截的filters
+      initialSize: 1  # 连接池初始化大小，
+      maxActive: 20   # 连接池初始化最大
+      minIdle: 1    # 连接池初始化最小
+      maxWait: 60000  # 配置获取连接等待超时的时间
+      timeBetweenEvictionRunsMillis: 60000    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      minEvictableIdleTimeMillis: 300000    # 配置一个连接在池中最小生存的时间，单位是毫秒
+      testWhileIdle: true  #在在检查闲置连接时同时检查连接可用性
+      testOnBorrow: false  #在解除连接时检查连接可用性
+      testOnReturn: false   #在客户端归还连接时检查连接可用性
+      poolPreparedStatements: true    # 打开PSCache，并且指定每个连接上PSCache的大小
+      maxOpenPreparedStatements: 20
+mqtt:
+  host: tcp://192.168.3.183:1883
+  clientId: devClientId_park1_ipc1_enter #以后可修改成动态Topic方式
+  Topic: sys/park1/ipc1/things/event/up
+  #clientOutId: devClientId_park1_ipc1_exit
+  #outTopic: park1/ipc1/exit

@@ -1,0 +1,16 @@
+server:
+  port: 95
+  servlet:
+    context-path: /smartpark
+spring:
+  #profiles:
+    #active: @profileActive@
+  datasource:
+    url: jdbc:mysql://10.100.254.104/smartpark?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: bjc20201
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mqtt:
+  host: tcp://10.100.254.104:1883
+  clientId: 28f396e08717439fa0dd36a94ea91a0d
+  topic: Runtime/4128
